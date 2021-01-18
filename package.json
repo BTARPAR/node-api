@@ -1,5 +1,6 @@
 {
   "name": "node-restful",
+  "type": "module",
   "version": "1.0.0",
   "description": "RESTFUL-API",
   "main": "index.js",
