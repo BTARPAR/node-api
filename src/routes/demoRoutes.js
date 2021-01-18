@@ -5,6 +5,7 @@ import {
     updateContact,
     deleteContact
 } from '../controllers/demoController'
+import {getAllData} from '../controllers/dataController'
 
 const routes = (app) => {
     app.route('/contact')
@@ -25,6 +26,8 @@ const routes = (app) => {
         .put(updateContact)
         // DELETE Contact by ID
         .delete(deleteContact)
+  app.route('/data')
+    .get(getAllData)
 }
 
 export default routes
