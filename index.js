@@ -4,7 +4,7 @@ import bodyParser from 'body-parser'
 import routes from './src/routes/demoRoutes'
 
 const app = express()
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 
 // mongoose connection
 
