@@ -1,7 +1,6 @@
 {
   "name": "node-restful",
   "version": "1.0.0",
-  "type": "module",
   "description": "RESTFUL-API",
   "main": "index.js",
   "scripts": {
@@ -9,8 +8,8 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src",
     "run": "nodemon ./index.js --exec babel-node -e js",
-    "build": "npm run clean && npm run build-babel",
-    "start": "npm run build && node ./build/index.js"
+    "build": "webpack --envmode=production --env.outputPath=dist",
+    "start": "node ./dist/index.js"
   },
   "keywords": [
     "Learning",
@@ -19,15 +18,20 @@
   "author": "btarpara1991@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.10.9",
-    "mongodb": "^3.6.2",
     "body-parser": "^1.19.0",
-    "nodemon": "^2.0.4"
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.11.12",
+    "nodemon": "^2.0.7",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "webpack-cli": "^3.3.12",
+    "babel-loader": "^8.1.0",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.10"
   }
 }
