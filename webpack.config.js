@@ -1,16 +1,12 @@
 const path = require('path')
-
-
-const extendedConfig = ({
-  mode = 'development',
-  outputPath = 'dev'
-}, argv) => {
-console.log({mode, outputPath, argv})
-}
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './index.js',
   target: 'node',
+  plugins: [
+    new CleanWebpackPlugin()
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js'
