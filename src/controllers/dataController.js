@@ -1,16 +1,14 @@
 import mongoose from 'mongoose'
 
-import {AllMovies} from '../models/demoModel'
+import {AllMoviesSchema} from '../models/demoModel'
 
-const Movies = mongoose.model('getAllMovies', AllMovies)
+const Movies = mongoose.model('Movies', AllMoviesSchema, 'getAllMovies')
 
-export const getAllData = (req, res) => {
-  console.log({Movies})
-  Movies.find({}, (err, movies) => {
-    if (err) {
-      res.send(err)
-    }
-    console.log({movies})
+export const getAllData = async (req, res) => {
+  try {
+    const movies = await Movies.find()
     res.json(movies)
-  })
+  } catch (err) {
+    res.json(err)
+  }
 }

@@ -26,7 +26,7 @@ export const ContactSchema = new Schema({
   }
 })
 
-export const AllMovies = new Schema({
+export const AllMoviesSchema = new Schema({
   name: {
     type: String
   },
