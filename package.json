@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "prestart": "yarn || npm i",
-    "start": "node ./index.js --exec babel-node -e js"
+    "run": "nodemon ./index.js --exec babel-node -e js",
+    "start": "babel ./index.js"
   },
   "keywords": [
     "Learning",
