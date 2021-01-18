@@ -9,10 +9,12 @@ const PORT = process.env.PORT || 4000
 // mongoose connection
 
 mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI+'/sample_mflix' || 'mongodb://localhost/demodb',{
+mongoose.connect(process.env.MONGODB_URI+'/movies' || 'mongodb://localhost/demodb',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+
+console.log({mongoose})
 
 // body parser set up
 app.use(bodyParser.urlencoded({extended: true}))

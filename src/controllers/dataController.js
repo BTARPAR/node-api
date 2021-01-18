@@ -1,16 +1,16 @@
 import mongoose from 'mongoose'
 
-import {MFlixSchema} from '../models/demoModel'
+import {AllMovies} from '../models/demoModel'
 
-const Data = mongoose.model('comments', MFlixSchema)
+const Movies = mongoose.model('getAllMovies', AllMovies)
 
 export const getAllData = (req, res) => {
-  console.log({Data})
-  Data.find({}, (err, commets) => {
+  console.log({Movies})
+  Movies.find({}, (err, movies) => {
     if (err) {
       res.send(err)
     }
-    console.log({commets})
-    res.json(commets)
+    console.log({movies})
+    res.json(movies)
   })
 }

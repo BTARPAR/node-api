@@ -27,7 +27,12 @@ const routes = (app) => {
         // DELETE Contact by ID
         .delete(deleteContact)
   app.route('/data')
-    .get(getAllData)
+    .get((req, res, next) => {
+      // middleware
+      console.log(`Request from : ${req.originalUrl}`)
+      console.log(`Request type : ${req.method}`)
+      next()
+    }, getAllData)
 }
 
 export default routes

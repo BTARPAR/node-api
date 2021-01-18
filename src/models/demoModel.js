@@ -26,15 +26,30 @@ export const ContactSchema = new Schema({
   }
 })
 
-export const MFlixSchema = new Schema({
+export const AllMovies = new Schema({
   name: {
-    type: String,
-    required: 'Enter First Name'
-  },
-  email: {
     type: String
   },
-  password: {
+  season: {
+    type: Number
+  },
+  number: {
+    type: Number
+  },
+  type: {
     type: String
+  },
+  airdate: {
+    type: String
+  },
+  airtime: {
+    type: String
+  },
+  airstamp: {
+    type: String
+  },
+  runtime: {
+    type: Number
   }
+
 })
