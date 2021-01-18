@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 import {MFlixSchema} from '../models/demoModel'
 
-const Data = mongoose.model('sample_mflix/comments', MFlixSchema)
+const Data = mongoose.model('comments', MFlixSchema)
 
 export const getAllData = (req, res) => {
   console.log({Data})

@@ -8,7 +8,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src",
     "run": "nodemon ./index.js --exec babel-node -e js",
-    "build": "webpack --envmode=production --env.outputPath=dist",
+    "webpack-build": "webpack --envmode=production --env.outputPath=dist",
     "start": "node ./dist/index.js"
   },
   "keywords": [
