@@ -2,6 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import routes from './src/routes/demoRoutes'
+import cors from 'cors'
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -19,6 +20,7 @@ console.log({mongoose})
 // body parser set up
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
+app.use(cors())
 
 routes(app)
 
